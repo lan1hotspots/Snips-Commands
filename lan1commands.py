@@ -11,9 +11,9 @@ import socket
 
 
 class Lan1Commands:
-    def __init__(self, config):
-        self.config = config
-        self.wanted_intents = []  # For reacting only with wanted intents
+	def __init__(self, config):
+		self.config = config
+		self.wanted_intents = []  # For reacting only with wanted intents
 
 	def set_alarm(self, intentmessage):
 		response= "OK"
