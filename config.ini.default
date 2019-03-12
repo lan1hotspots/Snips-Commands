@@ -1,0 +1,4 @@
+[global]
+
+[secret]
+mqtt_path=commands
