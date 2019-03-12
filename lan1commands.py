@@ -15,10 +15,10 @@ class Lan1Commands:
     self.mqtt.connect("localhost", 1883, 60)
     self.wanted_intents = []  # For reacting only with wanted intents
 
-  def set_alarm(self, intentmessage):
+  def set_alarm(self, intent_message):
     response= "OK"
     return response
-  def activate_object(self, intentmessage):
+  def activate_object(self, intent_message):
     if(len(intent_message.slots.object) >= 1):
       str_object = str(intent_message.slots.object.first().value)
       if(len(intent_message.slots.object_location) >= 1):
@@ -31,7 +31,7 @@ class Lan1Commands:
     else:
       response = "Entschuldigung. Ich habe leider nicht Verstanden was ich anschalten soll."
     return response
-  def deactivate_object(self, intentmessage):
+  def deactivate_object(self, intent_message):
     if(len(intent_message.slots.object) >= 1):      
       str_object = str(intent_message.slots.object.first().value)
       if(len(intent_message.slots.object_location) >= 1):
