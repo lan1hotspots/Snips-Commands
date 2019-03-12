@@ -24,13 +24,13 @@ def read_configuration_file(configuration_file):
 def subscribe_intent_callback(hermes, intent_message):
   intentname = intent_message.intent.intent_name
   if intentname == user_intent("Alarm"):
-    result_sentence = shoppinglist.set_alarm(intent_message)
+    result_sentence = lan1commands.set_alarm(intent_message)
     hermes.publish_end_session(intent_message.session_id, result_sentence)
   elif intentname == user_intent("Aktivate_Object"):
-    result_sentence = shoppinglist.activate_object(intent_message)
+    result_sentence = lan1commands.activate_object(intent_message)
     hermes.publish_end_session(intent_message.session_id, result_sentence)
   elif intentname == user_intent("Deaktivate_Object"):
-    result_sentence = shoppinglist.deactivate_object(intent_message)
+    result_sentence = lan1commands.deactivate_object(intent_message)
     hermes.publish_end_session(intent_message.session_id, result_sentence)
 
 if __name__ == "__main__":
